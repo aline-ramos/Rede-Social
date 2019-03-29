@@ -1,11 +1,32 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rede Social</title>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+    <script src="config.js"></script>
 </head>
 <body>
-    
+    <form>
+        <input type="email" id="login-input">
+        <input type="password" id="password-input">
+        <button id="sign-up-btn">Cadastre-se</button>
+        <button id="sign-in-btn">Login</button>
+        <button id="sign-google-btn">Google</button>
+        <button id="sign-facebook-btn">Facebook</button>
+    </form>
+
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script>
+    <script src="loginemail.js"></script>
+    <script src="google.js"></script>
+    <script src="facebook.js"></script>
+   
 </body>
 </html>
