@@ -8,17 +8,23 @@ $(document).ready(function(){
             var childKey = childSnapshot.key;
             var childData = childSnapshot.val();
             console.log(childData);
+ 
             createPost(childData.text);
             $('ul').append(`<li>${childData.text}</li>`)
             // ...
           });
         console.log(snapshot.val().text);
+            $('ul').append(`<li>${childData.texto}</li>`)
+            // ...
+          });
+        console.log(snapshot.val().texto);
         //$('ul').append(`<li>${snapshot.val().texto}</li>`)
 
         // ...
       });
     
     $("#post-btn").click(function(e){ 
+
         const txt = $('#post').val();
         $('#post').val(" ");
         createPost(txt);
@@ -40,4 +46,25 @@ $(document).ready(function(){
 });
 
 
-//teste
+
+        const txt = $('#post').val()
+
+        $('ul').append(`<li>${txt}</li>`)
+
+        database.ref('post/').push({
+            texto:txt
+          });
+
+
+
+    })
+
+
+    
+
+
+
+
+
+
+});
