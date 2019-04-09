@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,15 +11,22 @@
     <title>Document</title>
 </head>
 <body>
+        <div id="botoes" class="clearfix">
+            <button id="btnEnvia" name="btnEnvia" class="save abre_load">SALVAR</button>
+        </div>
+        <div id="campos" class="clearfix">
+            <label>SELECIONAR FOTOS</label>
+            <input id="img" type="file" name="img[]" multiple required/>
+        </div>
     <input type="text" id="post">
-    <button id="post-btn">Postar</button>
-    <ul></ul>
+    <button  id="post-btn">Postar</button>
+    <section id="feed"></section>
         <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous">
         </script>
     <script src="postagem.js"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </body>
 </html>
