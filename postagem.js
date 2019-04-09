@@ -1,43 +1,52 @@
-const database = firebase.database()
+const database = firebase.database();
 
 $(document).ready(function(){
-
-    database.ref('post/').once('value').then(function(snapshot) {
-        //var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
-        snapshot.forEach(function(childSnapshot) {
-            var childKey = childSnapshot.key;
-            var childData = childSnapshot.val();
-            console.log(childData);
-            createPost(childData.text);
-            $('ul').append(`<li>${childData.text}</li>`)
-            // ...
-          });
-        console.log(snapshot.val().text);
-        //$('ul').append(`<li>${snapshot.val().texto}</li>`)
-
-        // ...
+  database.ref('post/').once('value').then(function (snapshot) {
+    snapshot.forEach(function (childSnapshot) {
+      let childKey = childSnapshot.key;
+      let childData = childSnapshot.val();
+      createPost(childData.text, childKey)
       });
+    });
+
+  database.ref('post/').once('value').then(function (snapshot) {
+    snapshot.forEach(function (childSnapshot) {
+      let childKey = childSnapshot.key;
+      let childData = childSnapshot.val();
+          createPost(childData.text, childKey)
+    });
+  });
     
-    $("#post-btn").click(function(e){ 
-        const txt = $('#post').val();
-        $('#post').val(" ");
-        createPost(txt);
+  $("#post-btn").click(function(){
+    let txt = $('#post').val();
+    $('#post').val("");
+    let newPostInDB = database.ref('post/').push({
+      text: txt
+    });
+    createPost(txt, newPostInDB.key);
+    text.remove();
+  
+  })
+ 
+  function createPost(txt, key){
+    $('#feed').prepend(
+      `<div>
+        <span data-text-id="${key}">${txt}</span>
+        <button data-delete-id="${key}">Excluir</button>
+        <button data-edit-id="${key}">Editar</button>
+      </div>`
+    );
+  
 
-
-        //$('ul').append(`<li>${txt}</li>`)
-
-        database.ref('post/').push({
-            text:txt
-          });
-
-    })
-
-    function createPost(txt) {
-      $('ul').append(`<li><span>${txt}</span><button>Excluir</button></li>`)
-
-    }
+    $(`button[data-delete-id=${key}]`).click(function () {
+      $(this).parent().remove();
+      database.ref('post/' + key).remove();
+    });
+    $(`button[data-edit-id=${key}]`).click(function () {
+      let newText = prompt(`Altere seu post: ${txt}`);
+      $(`span[data-text-id=${key}]`).text(newText);
+      database.ref('post/' + key).update({ text: newText })
+        })
+      }      
 
 });
-
-
-//teste
