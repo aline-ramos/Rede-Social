@@ -1,15 +1,26 @@
 const database = firebase.database();
-
-$(document).ready(function () {
+$(document).ready(function(){
   database.ref('post/').once('value').then(function (snapshot) {
     snapshot.forEach(function (childSnapshot) {
       let childKey = childSnapshot.key;
       let childData = childSnapshot.val();
+
       createPost(childData.text, childKey);
     });
-  });
+  })
 
   $("#post-btn").click(function () {
+
+  database.ref('post/').once('value').then(function (snapshot) {
+    snapshot.forEach(function (childSnapshot) {
+      let childKey = childSnapshot.key;
+      let childData = childSnapshot.val();
+          createPost(childData.text, childKey)
+    });
+  });
+    
+  $("#post-btn").click(function(){
+
     let txt = $('#post').val();
     $('#post').val("");
     let newPostInDB = database.ref('post/').push({
