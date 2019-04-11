@@ -1,25 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
     <script src="config.js"></script>
-    <title>Document</title>
+    <title>Laboratória</title>
 </head>
+
 <body>
-    <input type="text" id="post">
-    <button id="post-btn">Postar</button>
-    <ul></ul>
-        <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    <header>
+        <nav class="d-flex justify-content-center" ><img src="/home/laboratoria/Downloads/915dcca0-f2df-4257-9b84-da33588c6ef7.jpeg" alt="">Laboratórians</nav>
+    </header>
+    <main class="col-md-6 container-fluid">
+        <div class="my-5 card bg-warning">
+            <textarea placeholder="Escreva seu post aqui..." class="bg-transparent post-text form-control" type="text" id="post"></textarea>
+            <button class="m-2 btn btn-dark" id="post-btn">Postar</button>
+        </div>
+
+        <section id="feed">
+            <!-- <div class="card text-center">
+                <div class="card-header">
+                    <i class="far fa-edit"></i>
+                    <i class="fas fa-trash-alt"></i>
+                </div>
+                <div class="card-body">
+                    <span data-text-id="${key}">${txt}</span>
+                </div>
+                <div class="card-footer text-muted">
+                    <button data-like-id="${key}"><i class="fa fa-heart"></i></button>
+                    <input data-coment-id="${key}" type="text" id="coment">
+                    <button id="btnComent" data-comentButton-id="${key}">Comentar</button>
+                </div>
+            </div> -->
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous">
         </script>
     <script src="postagem.js"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </body>
+
 </html>
