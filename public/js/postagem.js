@@ -27,12 +27,8 @@ $(document).ready(function(){
   function createPost(txt, key, likeCounter){
     $('#feed').prepend(
       `<div  class=" col-sm-2 col-md-12 col-lg-5 mx-auto card border-warning mb-3" style="max-width: 42rem;">
-          <button  data-delete-id="${key}">Excluir</button>
-          <button data-edit-id="${key}">Editar</button> <br>
-          <div class="custom-control custom-switch">
-          <input type="checkbox" class="custom-control-input" id="customSwitch1" data-private-id="${key}">
-          <label class="custom-control-label" for="customSwitch1">Marcar como privado</label>
-          </div>
+          <button class="m-2 btn btn-dark" data-delete-id="${key}">Excluir</button>
+          <button class="m-2 btn btn-dark" data-edit-id="${key}">Editar</button> <br>
           <span data-text-id="${key}">${txt}</span> <br>
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
           <div class="container"> 
@@ -40,9 +36,6 @@ $(document).ready(function(){
               Like <input data-like-id='${key}' class="btn-counter" name="btn-counter" readonly="readonly" type="text" value= ${likeCounter}>
               </a>
          </div>
-          <input data-coment-id="${key}" type="text" id="coment">
-          <button id="btnComent" data-comentButton-id="${key}">Comentar</button>
-          <section id="coments"></section>
       </div>`
     );
 

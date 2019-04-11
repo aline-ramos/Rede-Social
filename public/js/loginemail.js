@@ -1,35 +1,35 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
     //Botão Cadastro
 
-    $("#sign-in-btn").click(function(e){
-    e.preventDefault();
-       let email = $("#login-input").val();
-       let password = $("#password-input").val();
-       console.log(email, password);
+    $("#sign-up-btn").click(function (e) {
+        e.preventDefault();
+        let email = $("#login-input").val();
+        let password = $("#password-input").val();
+        console.log(email, password);
 
-       //Criar novo usuário
+        //Criar novo usuário
 
-       firebase.auth().createUserWithEmailAndPassword(email, password)
-       .then(function(response){
-           window.location = `./perfil.html?id=${response.user.uid}`;
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then(function (response) {
+                window.location = `./postagem.html?id=${response.user.uid}`;
 
-       })
+            })
 
-       .catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            console.log(error);
-       });
+            .catch(function (error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                console.log(error);
+            });
 
     })
 
-    
+
 
     //Botão entrar
 
-    $("#sign-up-btn").click(function(e){
+    $("#sign-in-btn").click(function (e) {
         e.preventDefault();
         let email = $("#login-input").val();
         let password = $("#password-input").val();
@@ -37,18 +37,18 @@ $(document).ready(function(){
         //Fazer login com usuário já cadastrado
 
         firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(function(response){
-            window.location = `./perfil.html?id=${response.user.uid}`;
-        })
-        
-        .catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // ...
+            .then(function (response) {
+                window.location = `./postagem.html?id=${response.user.uid}`;
+            })
 
-          });
-        
+            .catch(function (error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // ...
+
+            });
+
     })
 
 

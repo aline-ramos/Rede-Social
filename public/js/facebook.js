@@ -27,7 +27,7 @@ $(document).ready(function(){
         
         firebase.auth().signInWithPopup(provider)
         .then(function(result) {
-            window.location = `perfil.html?id=${result.user.uid}`;
+            window.location = `postagem.html?id=${result.user.uid}`;
 
 
             if (result.credential) {
