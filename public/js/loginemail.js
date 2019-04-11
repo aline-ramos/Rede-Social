@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     //Botão Cadastro
 
-    $("#sign-up-btn").click(function(e){
+    $("#sign-in-btn").click(function(e){
     e.preventDefault();
        let email = $("#login-input").val();
        let password = $("#password-input").val();
@@ -11,8 +11,8 @@ $(document).ready(function(){
        //Criar novo usuário
 
        firebase.auth().createUserWithEmailAndPassword(email, password)
-       .then(function(){
-           window.location = "perfil.html";
+       .then(function(response){
+           window.location = `./perfil.html?id=${response.user.uid}`;
 
        })
 
@@ -25,7 +25,11 @@ $(document).ready(function(){
 
     })
 
-    $("#sign-in-btn").click(function(e){
+    
+
+    //Botão entrar
+
+    $("#sign-up-btn").click(function(e){
         e.preventDefault();
         let email = $("#login-input").val();
         let password = $("#password-input").val();
@@ -33,8 +37,8 @@ $(document).ready(function(){
         //Fazer login com usuário já cadastrado
 
         firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(function(){
-            window.location = "perfil.html";
+        .then(function(response){
+            window.location = `./perfil.html?id=${response.user.uid}`;
         })
         
         .catch(function(error) {
