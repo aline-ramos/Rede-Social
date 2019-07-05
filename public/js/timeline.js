@@ -26,16 +26,16 @@ $(document).ready(function(){
   
   function createPost(txt, key, likeCounter){
     $('#feed').prepend(
-      `<div  class=" col-sm-2 col-md-12 col-lg-5 mx-auto card border-warning mb-3" style="max-width: 42rem;">
-          <button class="m-2 btn btn-dark" data-delete-id="${key}">Excluir</button>
-          <button class="m-2 btn btn-dark" data-edit-id="${key}">Editar</button> <br>
-          <span data-text-id="${key}">${txt}</span> <br>
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-          <div class="container"> 
-              <a class="like" data-like-id='${key}'><i class="fa fa-thumbs-o-up"></i>  
-              Like <input data-like-id='${key}' class="btn-counter" name="btn-counter" readonly="readonly" type="text" value= ${likeCounter}>
+      `<div  class=" col-sm-2 col-md-12 col-lg-5 mx-auto card p-3 border-yellow mb-3" style="max-width: 42rem;">
+      <span class="post-style" data-text-id="${key}">${txt}</span> <br>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <div class="container d-inline-flex p-0"> 
+      <button class="m-2 btn btn-dark ml-auto" data-delete-id="${key}">Excluir</button>
+      <button class="m-2 btn btn-dark" data-edit-id="${key}">Editar</button> <br>
+      </div>
+      <a class="like mr-auto" data-like-id='${key}'><i class="fa fa-heart"></i>  
+      <input data-like-id='${key}' class="btn-counter border-0" name="btn-counter" readonly="readonly" type="text" value= ${likeCounter}>
               </a>
-         </div>
       </div>`
     );
 
@@ -57,6 +57,8 @@ $(document).ready(function(){
       database.ref('post/' + key).update({ text: newText })
       })
     }  
+
+
       
     
  
@@ -72,25 +74,16 @@ function likePost (key) {
   }); 
 };    
 
-    // function createComent(comen, key){
-    //   $('#coments').prepend();
-    // }
 
-    // $("#btnComent").click(function(){
-    //   let comen = $('#coments').val();
-    //   $('#coments').val("");
-    //   let newPostInDB = database.ref('post/').push({
-    //     text: comen
-    //   });
-    //   createComent(comen, newPostInDB.key);
-    //   text.remove();
-    // })
+
+//problema no editar: olhar a redesolcial da iana, olhar o do rafa e o da loraine e rafa projeto inplace replacewith
+
 //primeiro de tudo: qdo logar aparecer a timeline especifica do usuario logado
-
 
 //criar o botao publico ou privado
 
 //criar uma function para filtrar
+
 //a function deve conter a let privado e a let publico e deve dizer que:
 // se o usuario clicar em publico a postagem aparece para todos os usuarios
 // se o usuario clicar em privado a postagem só aparece na timeline do pró´rio usuario

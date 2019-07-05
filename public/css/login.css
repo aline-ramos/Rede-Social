@@ -1,10 +1,14 @@
 
 body {
-  background: #fffb00;
+  background-color: #ffe520;
 }
 
 .card-signin {
   border: 0;
+}
+
+.btn-yellow {
+  background-color: #ffe520;
 }
 
 .btn-google {
