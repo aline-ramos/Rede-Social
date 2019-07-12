@@ -6,7 +6,6 @@ $(document).ready(function () {
         e.preventDefault();
         let email = $("#login-input").val();
         let password = $("#password-input").val();
-        console.log(email, password);
 
         //Criar novo usuário
 
