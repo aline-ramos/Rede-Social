@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/timeline.css" />
+  <a href="https://icons8.com/icon/11668/lembrete-de-compromissos"></a>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
+  <script src="js/config.js"></script>
+  <title>LABORATÓRIANS</title>
+</head>
+
+<body class="page-top">
+  
+  <nav id="navLab" class='nav justify-content-center'> 
+    <img src="file:///home/laboratoria/Downloads/915dcca0-f2df-4257-9b84-da33588c6ef7.jpeg" alt="">
+    <h3> LABORATÓRIANS </h3> 
+    <img src="file:///home/laboratoria/Downloads/915dcca0-f2df-4257-9b84-da33588c6ef7.jpeg" alt="">
+
+  </nav>
+  <!-- Lateral -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-yellow fixed-top" id="sideNav">
+
+      <div class="input-group mb-6">
+          <input type="text" class="form-control" placeholder="Pesquise aqui..." aria-label="Recipient's username" aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secundary" type="button" id="button-addon2">
+                <img src="https://img.icons8.com/metro/26/000000/search.png">
+            </button>
+          </div>
+        </div>
+
+    <div class="notification-bar">
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <img class="nav-link active" href="#" src="https://img.icons8.com/ios-filled/30/000000/appointment-reminders.png">
+          </li>
+            <li class="nav-item">
+            <img class="nav-link active" href="#" src="https://img.icons8.com/ios-filled/30/000000/envelope-love-1.png">
+          </li>
+            <li class="nav-item">
+            <img class="nav-link active" href="#" src="https://img.icons8.com/ios-filled/30/000000/conference-call.png">
+          </li>
+        </ul>
+    </div>
+        
+<div id="profile-and-info">
+    <aside class="navbar-brand js-scroll-trigger" href="#page-top">
+        <img class="profileJulia border border-dark" src="/home/laboratoria/Área de Trabalho/profile.jpg" alt="" srcset="">
+        <div class="d-flex justify-content-center">
+            <i class=".octicon-bell"></i>
+        </div>
+    </aside>
+    <div>
+      <h2>Júlia</h2>
+      <p>
+        <i>Estudante de Front End</i>
+        <h6>01|2018 - São Paulo</h6>
+      </p>
+    </div>
+</div>
+
+    <label for="inputState">Quem pode ver suas publicações?</label>
+    <select id="inputState" class=" form-control">
+      <option selected>Modo:</option>
+      <option >Público</option>
+      <option >Privado</option>
+    </select>
+  </nav>
+
+ 
+  <!-- Postagens         -->
+
+
+  <div class="container-fluid p-0">
+    <hr class="m-0">
+    <i class="resume-section p-3 d-flex justify-content-center" >A rede social das alunas da Laboratória.</i>
+
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
+      <div class="w-100">
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <main class="col-md-6 container-fluid">
+
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+              <div id="post-area" class="input-group mb-3">
+              <textarea placeholder="Escreva seu post aqui..." class="form-control bg-transparent post-text form-control" type="text"
+                id="post"></textarea>
+              <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="post-btn">Postar</button>
+                  </div>
+                </div>
+
+            <form class="form-row align-items-center col-auto my-1">
+              <section id="feed"></section>
+            </form>
+          </main>
+        </div>
+        
+      </div> 
+      </section> 
+    </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+          </script>
+        <script src="js/config.js"></script>
+        <script src="js/timeline.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+          crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+          crossorigin="anonymous"></script>
+</body>
+
+</html>
