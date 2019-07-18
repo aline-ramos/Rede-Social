@@ -1,0 +1,22 @@
+body{
+  background-color: #ffe520;
+}
+
+#card-signin {
+  border: 0;
+}
+
+#btn-yellow {
+  background-color: #ffe520;
+}
+
+#sign-google-btn {
+  color: white;
+  background-color: #ea4335;
+}
+
+#sign-facebook-btn {
+  color: white;
+  background-color: #3b5998;
+}
+
