@@ -1,0 +1,26 @@
+{
+  "name": "rede-social",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aline-ramos/Rede-Social.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aline-ramos/Rede-Social/issues"
+  },
+  "homepage": "https://aline-ramos.github.io/Rede-Social/",
+  "dependencies": {
+    "gh-pages": "^2.0.1",
+    "react": "^16.8.6"
+  },
+  "devDependencies": {
+    "jsx-loader": "^0.13.2"
+  }
+}
