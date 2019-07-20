@@ -6,7 +6,7 @@ $(document).ready(function(){
         
         firebase.auth().signInWithPopup(provider)
         .then(function(result) {
-            window.location = `postagem.html?id=${result.user.uid}`;
+            window.location = `timeline.html?id=${result.user.uid}`;
 
 
             if (result.credential) {

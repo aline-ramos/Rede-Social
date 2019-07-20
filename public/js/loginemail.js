@@ -11,7 +11,7 @@ $(document).ready(function () {
 
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(function (response) {
-                window.location = `./postagem.html?id=${response.user.uid}`;
+                window.location = `./timeline.html?id=${response.user.uid}`;
 
             })
 
@@ -37,7 +37,7 @@ $(document).ready(function () {
 
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then(function (response) {
-                window.location = `./postagem.html?id=${response.user.uid}`;
+                window.location = `./timeline.html?id=${response.user.uid}`;
             })
 
             .catch(function (error) {
