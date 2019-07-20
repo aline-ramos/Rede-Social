@@ -13,4 +13,4 @@ Desenvolvemos uma rede social nomeada por "Laboratorian" com a finalidade de con
   
 A implementação do projeto foi feita de maneira dinâmica entre as tecnologias usadas, de acordo com os requisitos exigidos. Tela de postagem com os pontos principais da aplicação funcional: publicação de postagem, edição e exclusão, curtidas, filtragem com escolha de postagem pública e privada.
 
-![Rede Social Laboratorian]( "https://i.imgur.com/TAtVZaB.png" )
+![Rede Social Laboratorian]( https://i.imgur.com/TAtVZaB.png )
